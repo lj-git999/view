@@ -88,10 +88,8 @@ export default {
 
         },
         update_emp(id){
-            let username = sessionStorage.getItem("username")
-            if (username) {
-                this.$router.push("/update/"+id)
-            }
+            this.$router.push("/update/"+id)
+
         },
         delete_emp(id){
             this.$axios({

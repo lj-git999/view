@@ -10,7 +10,7 @@
                 </div>
                 <div id="topheader">
                     <h1 id="title">
-                        <a href="#">Main  欢迎{{username}}！</a>
+                        <a href="#">Main</a>
                     </h1>
                 </div>
                 <div id="navigation">
@@ -82,7 +82,7 @@ export default {
             salary: "",
             img: "",
             age: "",
-            username: ''
+
         }
     },
     methods: {
@@ -109,6 +109,15 @@ export default {
             })
         }
 
+    },
+    created() {
+        let username=sessionStorage.getItem("username")
+        if (username){
+
+        }else{
+            this.$message.error('当前用户未登录，请登录');
+            this.$router.push('/login')
+        }
     }
 
 }
